@@ -179,4 +179,3 @@ The project is submitted as a repository or ZIP archive containing:
 
 Generated folders such as `Library/`, `Temp/`, and `Logs/` are excluded from the submission.
 
-This project was developed for the JetSynthesys Unity Developer Screening Test. It is intended solely for evaluation and is not to be published or used in a portfolio or on social media.
