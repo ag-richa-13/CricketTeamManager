@@ -19,8 +19,13 @@ public sealed class PlayerDataGenerator : EditorWindow
         public int bowling;
 
         public PlayerDefinition(
-            string id, string name, string country,
-            PlayerRole role, int overall, int batting, int bowling)
+            string id,
+            string name,
+            string country,
+            PlayerRole role,
+            int overall,
+            int batting,
+            int bowling)
         {
             this.id = id;
             this.name = name;
@@ -33,7 +38,6 @@ public sealed class PlayerDataGenerator : EditorWindow
     }
 
     private PlayerDatabase database;
-
     private DefaultAsset spriteFolder;
     private DefaultAsset outputFolder;
 
@@ -57,45 +61,110 @@ public sealed class PlayerDataGenerator : EditorWindow
     private const string DefaultOutputPath =
         "Assets/Data/GeneratedPlayers";
 
-
+    // All names below are fictional.
+    // Player IDs, countries, roles and ratings are preserved.
     private static readonly PlayerDefinition[] Definitions =
     {
-    new("IND001", "Shubman Gill", "India", PlayerRole.Batter, 89, 92, 28),
-    new("IND002", "Suryakumar Yadav", "India", PlayerRole.Batter, 91, 96, 20),
-    new("IND003", "Rishabh Pant", "India", PlayerRole.Wicketkeeper, 88, 90, 15),
-    new("IND004", "Sanju Samson", "India", PlayerRole.Wicketkeeper, 75, 89, 10),
-    new("IND005", "Jasprit Bumrah", "India", PlayerRole.Bowler, 95, 18, 98),
-    new("IND006", "Arshdeep Singh", "India", PlayerRole.Bowler, 72, 20, 87),
-    new("IND007", "Hardik Pandya", "India", PlayerRole.AllRounder, 87, 85, 82),
-    new("IND008", "Ravindra Jadeja", "India", PlayerRole.AllRounder, 58, 82, 91),
+        // India
+        new("IND001", "Arjun Mehta", "India",
+            PlayerRole.Batter, 89, 92, 28),
 
-    new("SA001", "Aiden Markram", "South Africa", PlayerRole.Batter, 87, 89, 35),
-    new("SA002", "David Miller", "South Africa", PlayerRole.Batter, 77, 94, 15),
-    new("SA003", "Quinton de Kock", "South Africa", PlayerRole.Wicketkeeper, 90, 94, 10),
-    new("SA004", "Ryan Rickelton", "South Africa", PlayerRole.Wicketkeeper, 64, 87, 10),
-    new("SA005", "Kagiso Rabada", "South Africa", PlayerRole.Bowler, 92, 25, 96),
-    new("SA006", "Anrich Nortje", "South Africa", PlayerRole.Bowler, 69, 18, 91),
-    new("SA007", "Marco Jansen", "South Africa", PlayerRole.AllRounder, 88, 80, 90),
-    new("SA008", "George Linde", "South Africa", PlayerRole.AllRounder, 49, 75, 83),
+        new("IND002", "Vihaan Sharma", "India",
+            PlayerRole.Batter, 91, 96, 20),
 
-    new("ENG001", "Harry Brook", "England", PlayerRole.Batter, 91, 95, 25),
-    new("ENG002", "Joe Root", "England", PlayerRole.Batter, 74, 93, 32),
-    new("ENG003", "Jos Buttler", "England", PlayerRole.Wicketkeeper, 92, 97, 10),
-    new("ENG004", "Phil Salt", "England", PlayerRole.Wicketkeeper, 67, 92, 10),
-    new("ENG005", "Jofra Archer", "England", PlayerRole.Bowler, 89, 30, 94),
-    new("ENG006", "Adil Rashid", "England", PlayerRole.Bowler, 71, 20, 90),
-    new("ENG007", "Sam Curran", "England", PlayerRole.AllRounder, 86, 83, 85),
-    new("ENG008", "Will Jacks", "England", PlayerRole.AllRounder, 54, 88, 74),
+        new("IND003", "Kabir Malhotra", "India",
+            PlayerRole.Wicketkeeper, 88, 90, 15),
 
-    new("NZ001", "Finn Allen", "New Zealand", PlayerRole.Batter, 88, 96, 15),
-    new("NZ002", "Daryl Mitchell", "New Zealand", PlayerRole.Batter, 73, 92, 40),
-    new("NZ003", "Devon Conway", "New Zealand", PlayerRole.Wicketkeeper, 89, 93, 10),
-    new("NZ004", "Tom Latham", "New Zealand", PlayerRole.Wicketkeeper, 62, 87, 10),
-    new("NZ005", "Matt Henry", "New Zealand", PlayerRole.Bowler, 87, 20, 92),
-    new("NZ006", "Lockie Ferguson", "New Zealand", PlayerRole.Bowler, 68, 18, 93),
-    new("NZ007", "Mitchell Santner", "New Zealand", PlayerRole.AllRounder, 87, 78, 91),
-    new("NZ008", "Rachin Ravindra", "New Zealand", PlayerRole.AllRounder, 45, 89, 81)
-};
+        new("IND004", "Reyansh Kapoor", "India",
+            PlayerRole.Wicketkeeper, 75, 89, 10),
+
+        new("IND005", "Devansh Rao", "India",
+            PlayerRole.Bowler, 95, 18, 98),
+
+        new("IND006", "Advik Nair", "India",
+            PlayerRole.Bowler, 72, 20, 87),
+
+        new("IND007", "Ishaan Verma", "India",
+            PlayerRole.AllRounder, 87, 85, 82),
+
+        new("IND008", "Aarav Deshmukh", "India",
+            PlayerRole.AllRounder, 58, 82, 91),
+
+        // South Africa
+        new("SA001", "Liam van der Merwe", "South Africa",
+            PlayerRole.Batter, 87, 89, 35),
+
+        new("SA002", "Ethan Botha", "South Africa",
+            PlayerRole.Batter, 77, 94, 15),
+
+        new("SA003", "Noah Pretorius", "South Africa",
+            PlayerRole.Wicketkeeper, 90, 94, 10),
+
+        new("SA004", "Caleb Mokoena", "South Africa",
+            PlayerRole.Wicketkeeper, 64, 87, 10),
+
+        new("SA005", "Jayden Naidoo", "South Africa",
+            PlayerRole.Bowler, 92, 25, 96),
+
+        new("SA006", "Daniel Coetzee", "South Africa",
+            PlayerRole.Bowler, 69, 18, 91),
+
+        new("SA007", "Luke van Zyl", "South Africa",
+            PlayerRole.AllRounder, 88, 80, 90),
+
+        new("SA008", "Ryan Nkosi", "South Africa",
+            PlayerRole.AllRounder, 49, 75, 83),
+
+        // England
+        new("ENG001", "Oliver Bennett", "England",
+            PlayerRole.Batter, 91, 95, 25),
+
+        new("ENG002", "Harry Whitmore", "England",
+            PlayerRole.Batter, 74, 93, 32),
+
+        new("ENG003", "Jack Fletcher", "England",
+            PlayerRole.Wicketkeeper, 92, 97, 10),
+
+        new("ENG004", "Thomas Hayes", "England",
+            PlayerRole.Wicketkeeper, 67, 92, 10),
+
+        new("ENG005", "Charlie Brooks", "England",
+            PlayerRole.Bowler, 89, 30, 94),
+
+        new("ENG006", "Alfie Turner", "England",
+            PlayerRole.Bowler, 71, 20, 90),
+
+        new("ENG007", "George Mitchell", "England",
+            PlayerRole.AllRounder, 86, 83, 85),
+
+        new("ENG008", "Freddie Collins", "England",
+            PlayerRole.AllRounder, 54, 88, 74),
+
+        // New Zealand
+        new("NZ001", "Ethan Campbell", "New Zealand",
+            PlayerRole.Batter, 88, 96, 15),
+
+        new("NZ002", "Lucas Thompson", "New Zealand",
+            PlayerRole.Batter, 73, 92, 40),
+
+        new("NZ003", "Mason Walker", "New Zealand",
+            PlayerRole.Wicketkeeper, 89, 93, 10),
+
+        new("NZ004", "Oliver Reid", "New Zealand",
+            PlayerRole.Wicketkeeper, 62, 87, 10),
+
+        new("NZ005", "Noah Sullivan", "New Zealand",
+            PlayerRole.Bowler, 87, 20, 92),
+
+        new("NZ006", "Jack Morrison", "New Zealand",
+            PlayerRole.Bowler, 68, 18, 93),
+
+        new("NZ007", "Leo Anderson", "New Zealand",
+            PlayerRole.AllRounder, 87, 78, 91),
+
+        new("NZ008", "Finn Parker", "New Zealand",
+            PlayerRole.AllRounder, 45, 89, 81)
+    };
 
     [MenuItem("Tools/Cricket Team/Player Data Generator")]
     private static void OpenWindow()
@@ -110,12 +179,18 @@ public sealed class PlayerDataGenerator : EditorWindow
     private void OnEnable()
     {
         if (outputFolder == null)
-            outputFolder = AssetDatabase.LoadAssetAtPath<DefaultAsset>(
-                DefaultOutputPath);
+        {
+            outputFolder =
+                AssetDatabase.LoadAssetAtPath<DefaultAsset>(
+                    DefaultOutputPath);
+        }
 
         if (spriteFolder == null)
-            spriteFolder = AssetDatabase.LoadAssetAtPath<DefaultAsset>(
-                "Assets/Sprites");
+        {
+            spriteFolder =
+                AssetDatabase.LoadAssetAtPath<DefaultAsset>(
+                    "Assets/Sprites");
+        }
 
         if (database == null)
         {
@@ -124,23 +199,28 @@ public sealed class PlayerDataGenerator : EditorWindow
 
             if (matches.Length > 0)
             {
-                string path = AssetDatabase.GUIDToAssetPath(matches[0]);
-                database = AssetDatabase.LoadAssetAtPath<PlayerDatabase>(path);
+                string path =
+                    AssetDatabase.GUIDToAssetPath(matches[0]);
+
+                database =
+                    AssetDatabase.LoadAssetAtPath<PlayerDatabase>(path);
             }
         }
     }
 
     private void OnGUI()
     {
-        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+        scrollPosition =
+            EditorGUILayout.BeginScrollView(scrollPosition);
 
         EditorGUILayout.Space(8);
+
         EditorGUILayout.LabelField(
             "Cricket Player Dataset Generator",
             EditorStyles.boldLabel);
 
         EditorGUILayout.HelpBox(
-            "Creates 32 editable PlayerData assets for India, " +
+            "Creates 32 fictional player assets for India, " +
             "South Africa, England and New Zealand. " +
             "Ratings are illustrative game values.",
             MessageType.Info);
@@ -148,23 +228,32 @@ public sealed class PlayerDataGenerator : EditorWindow
         EditorGUILayout.Space(8);
 
         EditorGUILayout.LabelField(
-            "Database and Folders", EditorStyles.boldLabel);
+            "Database and Folders",
+            EditorStyles.boldLabel);
 
         database = (PlayerDatabase)EditorGUILayout.ObjectField(
-            "Player Database", database,
-            typeof(PlayerDatabase), false);
+            "Player Database",
+            database,
+            typeof(PlayerDatabase),
+            false);
 
         spriteFolder = (DefaultAsset)EditorGUILayout.ObjectField(
-            "Sprites Folder", spriteFolder,
-            typeof(DefaultAsset), false);
+            "Sprites Folder",
+            spriteFolder,
+            typeof(DefaultAsset),
+            false);
 
         outputFolder = (DefaultAsset)EditorGUILayout.ObjectField(
-            "Output Folder", outputFolder,
-            typeof(DefaultAsset), false);
+            "Output Folder",
+            outputFolder,
+            typeof(DefaultAsset),
+            false);
 
         EditorGUILayout.Space(8);
+
         EditorGUILayout.LabelField(
-            "Country Flags", EditorStyles.boldLabel);
+            "Country Flags",
+            EditorStyles.boldLabel);
 
         indiaFlag = (Sprite)EditorGUILayout.ObjectField(
             "India", indiaFlag, typeof(Sprite), false);
@@ -179,8 +268,10 @@ public sealed class PlayerDataGenerator : EditorWindow
             "New Zealand", newZealandFlag, typeof(Sprite), false);
 
         EditorGUILayout.Space(8);
+
         EditorGUILayout.LabelField(
-            "Role Icons", EditorStyles.boldLabel);
+            "Role Icons",
+            EditorStyles.boldLabel);
 
         batterIcon = (Sprite)EditorGUILayout.ObjectField(
             "Batter", batterIcon, typeof(Sprite), false);
@@ -197,19 +288,23 @@ public sealed class PlayerDataGenerator : EditorWindow
         EditorGUILayout.Space(8);
 
         EditorGUILayout.HelpBox(
-            "Assign the existing sprites by dragging them from " +
-            "the Project window. The sprite folder field is " +
-            "for reference; flags and icons are assigned explicitly.",
+            "Drag the existing sprites from the Project window " +
+            "into the fields above. The sprite folder is for " +
+            "reference; flags and role icons are assigned explicitly.",
             MessageType.None);
 
         EditorGUILayout.Space(8);
 
         EditorGUILayout.LabelField(
-            $"Dataset: {Definitions.Length} players",
+            $"Dataset: {Definitions.Length} fictional players",
             EditorStyles.boldLabel);
 
-        if (GUILayout.Button("Generate / Update Players", GUILayout.Height(36)))
+        if (GUILayout.Button(
+                "Generate / Update Players",
+                GUILayout.Height(36)))
+        {
             GeneratePlayers();
+        }
 
         EditorGUILayout.Space(8);
         EditorGUILayout.HelpBox(statusMessage, statusType);
@@ -222,21 +317,27 @@ public sealed class PlayerDataGenerator : EditorWindow
     {
         if (database == null)
         {
-            SetStatus("Assign MainPlayerDatabase first.", MessageType.Error);
+            SetStatus(
+                "Assign MainPlayerDatabase first.",
+                MessageType.Error);
             return;
         }
 
         if (indiaFlag == null || southAfricaFlag == null ||
             englandFlag == null || newZealandFlag == null)
         {
-            SetStatus("Assign all four country flag sprites.", MessageType.Error);
+            SetStatus(
+                "Assign all four country flag sprites.",
+                MessageType.Error);
             return;
         }
 
         if (batterIcon == null || bowlerIcon == null ||
             allRounderIcon == null || wicketkeeperIcon == null)
         {
-            SetStatus("Assign all four role icons.", MessageType.Error);
+            SetStatus(
+                "Assign all four role icons.",
+                MessageType.Error);
             return;
         }
 
@@ -253,6 +354,7 @@ public sealed class PlayerDataGenerator : EditorWindow
         EnsureFolderExists(outputPath);
 
         var databaseSerialized = new SerializedObject(database);
+
         SerializedProperty playerList =
             databaseSerialized.FindProperty("players");
 
@@ -278,7 +380,8 @@ public sealed class PlayerDataGenerator : EditorWindow
             }
 
             string assetPath =
-                $"{outputPath}/{definition.id}_{MakeSafeFileName(definition.name)}.asset";
+                $"{outputPath}/{definition.id}_" +
+                $"{MakeSafeFileName(definition.name)}.asset";
 
             PlayerData player =
                 AssetDatabase.LoadAssetAtPath<PlayerData>(assetPath);
@@ -293,27 +396,34 @@ public sealed class PlayerDataGenerator : EditorWindow
             generatedPlayers.Add(player);
         }
 
-        // Preserve existing database players not generated by this tool.
+        // Preserve database players not generated by this tool.
         var finalPlayers = new List<PlayerData>();
         var finalIds = new HashSet<string>();
 
         for (int i = 0; i < playerList.arraySize; i++)
         {
             PlayerData existing =
-                playerList.GetArrayElementAtIndex(i).objectReferenceValue
-                as PlayerData;
+                playerList.GetArrayElementAtIndex(i)
+                    .objectReferenceValue as PlayerData;
 
-            if (existing == null || ids.Contains(existing.PlayerId))
+            if (existing == null ||
+                ids.Contains(existing.PlayerId))
+            {
                 continue;
+            }
 
             if (finalIds.Add(existing.PlayerId))
+            {
                 finalPlayers.Add(existing);
+            }
         }
 
         foreach (PlayerData player in generatedPlayers)
         {
             if (finalIds.Add(player.PlayerId))
+            {
                 finalPlayers.Add(player);
+            }
         }
 
         databaseSerialized.Update();
@@ -322,8 +432,8 @@ public sealed class PlayerDataGenerator : EditorWindow
 
         for (int i = 0; i < finalPlayers.Count; i++)
         {
-            playerList.GetArrayElementAtIndex(i).objectReferenceValue =
-                finalPlayers[i];
+            playerList.GetArrayElementAtIndex(i)
+                .objectReferenceValue = finalPlayers[i];
         }
 
         databaseSerialized.ApplyModifiedProperties();
@@ -332,13 +442,16 @@ public sealed class PlayerDataGenerator : EditorWindow
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
 
-        bool valid = database.ValidateDatabase(out string validationMessage);
+        bool valid =
+            database.ValidateDatabase(out string validationMessage);
 
         SetStatus(
             valid
-                ? $"Success! Generated/updated {generatedPlayers.Count} players. " +
-                  $"Database now contains {finalPlayers.Count} players."
-                : $"Players generated, but validation failed: {validationMessage}",
+                ? $"Success! Generated/updated {generatedPlayers.Count} " +
+                  $"fictional players. Database now contains " +
+                  $"{finalPlayers.Count} players."
+                : $"Players generated, but validation failed: " +
+                  $"{validationMessage}",
             valid ? MessageType.Info : MessageType.Warning);
 
         Selection.activeObject = database;
@@ -346,7 +459,8 @@ public sealed class PlayerDataGenerator : EditorWindow
     }
 
     private void ApplyPlayerData(
-        PlayerData player, PlayerDefinition definition)
+        PlayerData player,
+        PlayerDefinition definition)
     {
         SerializedObject serialized = new SerializedObject(player);
 
@@ -357,14 +471,21 @@ public sealed class PlayerDataGenerator : EditorWindow
             serialized.FindProperty("role");
 
         if (roleProperty != null)
+        {
             roleProperty.enumValueIndex = (int)definition.role;
+        }
 
         SetInt(serialized, "overallRating", definition.overall);
         SetInt(serialized, "battingRating", definition.batting);
         SetInt(serialized, "bowlingRating", definition.bowling);
 
-        SetSprite(serialized, "countryFlag", GetCountryFlag(definition.country));
-        SetSprite(serialized, "roleIcon", GetRoleIcon(definition.role));
+        SetSprite(
+            serialized, "countryFlag",
+            GetCountryFlag(definition.country));
+
+        SetSprite(
+            serialized, "roleIcon",
+            GetRoleIcon(definition.role));
 
         serialized.ApplyModifiedProperties();
         EditorUtility.SetDirty(player);
@@ -374,11 +495,20 @@ public sealed class PlayerDataGenerator : EditorWindow
     {
         switch (country)
         {
-            case "India": return indiaFlag;
-            case "South Africa": return southAfricaFlag;
-            case "England": return englandFlag;
-            case "New Zealand": return newZealandFlag;
-            default: return null;
+            case "India":
+                return indiaFlag;
+
+            case "South Africa":
+                return southAfricaFlag;
+
+            case "England":
+                return englandFlag;
+
+            case "New Zealand":
+                return newZealandFlag;
+
+            default:
+                return null;
         }
     }
 
@@ -386,45 +516,71 @@ public sealed class PlayerDataGenerator : EditorWindow
     {
         switch (role)
         {
-            case PlayerRole.Batter: return batterIcon;
-            case PlayerRole.Bowler: return bowlerIcon;
-            case PlayerRole.AllRounder: return allRounderIcon;
-            case PlayerRole.Wicketkeeper: return wicketkeeperIcon;
-            default: return null;
+            case PlayerRole.Batter:
+                return batterIcon;
+
+            case PlayerRole.Bowler:
+                return bowlerIcon;
+
+            case PlayerRole.AllRounder:
+                return allRounderIcon;
+
+            case PlayerRole.Wicketkeeper:
+                return wicketkeeperIcon;
+
+            default:
+                return null;
         }
     }
 
     private static void SetString(
-        SerializedObject obj, string propertyName, string value)
+        SerializedObject obj,
+        string propertyName,
+        string value)
     {
-        SerializedProperty property = obj.FindProperty(propertyName);
+        SerializedProperty property =
+            obj.FindProperty(propertyName);
 
         if (property != null)
+        {
             property.stringValue = value;
+        }
     }
 
     private static void SetInt(
-        SerializedObject obj, string propertyName, int value)
+        SerializedObject obj,
+        string propertyName,
+        int value)
     {
-        SerializedProperty property = obj.FindProperty(propertyName);
+        SerializedProperty property =
+            obj.FindProperty(propertyName);
 
         if (property != null)
+        {
             property.intValue = Mathf.Clamp(value, 0, 100);
+        }
     }
 
     private static void SetSprite(
-        SerializedObject obj, string propertyName, Sprite value)
+        SerializedObject obj,
+        string propertyName,
+        Sprite value)
     {
-        SerializedProperty property = obj.FindProperty(propertyName);
+        SerializedProperty property =
+            obj.FindProperty(propertyName);
 
         if (property != null)
+        {
             property.objectReferenceValue = value;
+        }
     }
 
     private static string MakeSafeFileName(string playerName)
     {
         foreach (char invalid in Path.GetInvalidFileNameChars())
+        {
             playerName = playerName.Replace(invalid, '_');
+        }
 
         return playerName.Replace(' ', '_');
     }
@@ -439,7 +595,9 @@ public sealed class PlayerDataGenerator : EditorWindow
             string nextPath = currentPath + "/" + parts[i];
 
             if (!AssetDatabase.IsValidFolder(nextPath))
+            {
                 AssetDatabase.CreateFolder(currentPath, parts[i]);
+            }
 
             currentPath = nextPath;
         }
