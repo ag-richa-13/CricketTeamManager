@@ -146,7 +146,7 @@ Complete these checks in the final Unity build before submission.
 - [x] Team rating uses the correct average and rounding rules.
 - [x] Mouse and touch gesture behavior has been tested.
 - [x] Scrolling does not accidentally add, remove, or assign a captain.
-- [ ] The UI has been checked at 16:9 and a wider landscape resolution.
+- [x] The UI has been checked at 16:9 and a wider landscape resolution.
 
 
 ## Known Limitations
